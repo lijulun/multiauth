@@ -18,8 +18,13 @@ class Student extends Authenticatable
         'password'
     ];
 
-	public function findForPassport($username) {
+/*	public function findForPassport($username) {
 		return $this->where('school_id', $username)->first();
-	}
+	}*/
+
+    public function findForPassportMulti($request)
+    {
+        return $this->where('school_id', $request['school_id'])->where('student_no', $request['student_no'])->first();
+    }
 
 }
