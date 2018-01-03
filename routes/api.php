@@ -20,3 +20,9 @@ use Illuminate\Http\Request;
 Route::middleware('multi.auth')->get('/user', function (Request $request) {
     return $request->user('api');
 });
+
+Route::group(['middleware' => 'api', 'prefix' => 'teachers'], function () {
+    Route::get('/me', function (Request $request) {
+        return $request->user('api');
+    })->middleware('teacher');
+});
