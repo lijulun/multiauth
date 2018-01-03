@@ -36,4 +36,15 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function logout()
+    {
+        if (\Auth::guard('api')->check()) {
+            $modelName = \Auth::guard('api')->user()->getTable();
+            \Auth::guard('api')->user()->token()->delete();
+            return response()->json(['message' => 'logout '. $modelName .' success', 'status_code' => 200]);
+        }else{
+            abort(401, 'Not authenticated');
+        }
+    }
 }

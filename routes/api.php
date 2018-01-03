@@ -26,3 +26,5 @@ Route::group(['middleware' => 'api', 'prefix' => 'teachers'], function () {
         return $request->user('api');
     })->middleware('teacher');
 });
+
+Route::post('/logout', 'Auth\LoginController@logout');
