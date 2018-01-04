@@ -43,7 +43,9 @@
             "php artisan clear-compiled",
             "php artisan optimize",
             "chmod -R 777 storage bootstrap/cache",
-            "php artisan passport:keys"
+            "echo \"$OAUTH_PUBLIC_KEY\" > storage/oauth-public.key",
+            "echo \"$OAUTH_PRIVATE_KEY\" > storage/oauth-private.key"
+            // "php artisan passport:keys"
         ],
 
         "post-root-package-install": [
