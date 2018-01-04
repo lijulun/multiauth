@@ -67,6 +67,22 @@ heroku config:set APP_ENV=production APP_DEBUG=false APP_LOG_LEVEL=debug
  git push heroku master
 ```
 
+
+**5. Passport key for Heroku (Do once)**
+
+```sh
+heroku run bash
+php artisan passport:keys
+cat storage/oauth-public.key]
+cat storage/oauth-private.key
+```
+Copy content ,exit bash. Wrap the .key in double quotes,  add it on the CLI config
+```sh
+heroku config:set OAUTH_PUBLIC_KEY="..."
+heroku config:set OAUTH_PRIVATE_KEY="..."
+git push heroku master
+```
+
 ---
 
 ## License
