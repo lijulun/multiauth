@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Laravel\Passport\Passport;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,8 +23,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        if (env('KEY_PATH', false) !== false) {
-            Passport::loadKeysFrom(env('KEY_PATH'));
-        }
+        //
     }
 }
