@@ -76,7 +76,9 @@ php artisan passport:keys
 cat storage/oauth-public.key]
 cat storage/oauth-private.key
 ```
+
 Copy content ,exit bash. Wrap the .key in double quotes,  add it on the CLI config
+
 ```sh
 heroku config:set OAUTH_PUBLIC_KEY="..."
 heroku config:set OAUTH_PRIVATE_KEY="..."

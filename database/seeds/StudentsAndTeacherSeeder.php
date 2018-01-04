@@ -29,14 +29,14 @@ class StudentsAndTeacherSeeder extends Seeder
 
         Teacher::query()->truncate();
         Teacher::create([
-			'school_id'  => '10001',
-			'name'       => 'Kathy',
-			'password'   => bcrypt('tt111')
+            'school_id'    => '10001',
+            'teacher_name' => 'Kathy',
+            'password'     => bcrypt('tt111')
         ]);
         Teacher::create([
-			'school_id'  => '10001',
-			'name'       => 'Jack',
-			'password'   => bcrypt('tt222')
+            'school_id'    => '10001',
+            'teacher_name' => 'Jack',
+            'password'     => bcrypt('tt222')
         ]);
 
     }
